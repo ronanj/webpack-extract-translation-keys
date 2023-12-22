@@ -115,6 +115,7 @@ ExtractTranslationPlugin.prototype.apply = function(compiler) {
                             }
 
                             key = parser.evaluateExpression(expr.arguments[0]);
+
                             if (!key.isString()) {
                                 parser.state.module.errors.push(
                                     new DynamicTranslationKeyError(
@@ -147,7 +148,10 @@ ExtractTranslationPlugin.prototype.apply = function(compiler) {
                                 }
                                 entryKeys[key] = value;
                                 outputMap.set(entry, entryKeys);
+                            } else {
+                                value = entryKeys[key]
                             }
+
 
                             if (mangleKeys) {
                                 // This replaces the original string with the new string
