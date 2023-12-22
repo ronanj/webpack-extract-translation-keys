@@ -149,7 +149,7 @@ ExtractTranslationPlugin.prototype.apply = function(compiler) {
                                 entryKeys[key] = value;
                                 outputMap.set(entry, entryKeys);
                             } else {
-                                value = entryKeys[key]
+                                value = entryKeys[key];
                             }
 
 
